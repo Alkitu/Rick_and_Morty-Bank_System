@@ -1,10 +1,22 @@
 [
   {
     "id": "bankAccounts",
-    "name_en": "Bank Accounts"
+    "name_en": "Account Status"
+  },
+  {
+    "id": "deposit",
+    "name_en": "Deposit"
+  },
+  {
+    "id": "withdrawal",
+    "name_en": "Withdrawal"
+  },
+  {
+    "id": "transfer",
+    "name_en": "Transfer"
   },
   {
     "id": "loans",
     "name_en": "Loans"
-  } 
+  }
 ]

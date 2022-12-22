@@ -30,11 +30,12 @@ function NavBar() {
   const { height } = useDimensions(containerRef);
 
   return (
-  <div className="fixed top-0 z-50 w-screen h-screen">
-    <div className="w-40 ml-8 mt-4">
-      <img src="/assets/images/Rick_and_Morty_Logo.svg" alt="" className="w-full"/>
-    </div>
-    <motion.nav
+  <div className="top-0 z-50 w-screen ">
+    <div className="fixed top-0 w-screen bg-black">
+      <div className="w-40 ml-8 mt-4 mb-4">
+        <img src="/assets/images/Rick_and_Morty_Logo.svg" alt="" className="w-full"/>
+      </div>
+      <motion.nav
       initial={false}
       animate={isOpen ? "open" : "closed"}
       custom={height}
@@ -42,10 +43,13 @@ function NavBar() {
       className=' top-0 right-0 bottom-0 w-80'
     >
 
-    <motion.div className="absolute top-0 right-0 bottom-0 bg-rick&morty-june-bud w-80" variants={sidebar} />
+    <motion.div className="fixed top-0 right-0 bottom-0 bg-rick&morty-june-bud w-80" variants={sidebar} />
       <MainMenu/>
         <ToggleMenu  toggle={() => toggleOpen()} />
     </motion.nav>
+    </div>
+    
+
   </div>
   );
 }

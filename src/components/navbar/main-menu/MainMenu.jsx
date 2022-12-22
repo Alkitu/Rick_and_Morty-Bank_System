@@ -41,7 +41,7 @@ function MainMenu () {
     <>
       <motion.ul
         variants={itemVariants}
-        className="flex-row group-first:border-b-2 content-center justify-center top-[100px] right-0 p-7 absolute w-80 "
+        className="flex-row group-first:border-b-2 content-center justify-center top-[100px] right-0 p-7 fixed w-80 "
         whileHover={{ fontWeight: "bolder", color: "black" }}
       >
 

@@ -2,5 +2,9 @@
   {
     "id": "info",
     "name_en": "Info"
+  },
+  {
+    "id": "notifications",
+    "name_en": "Notifications"
   }
 ]
