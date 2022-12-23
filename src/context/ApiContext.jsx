@@ -22,7 +22,8 @@ function ApiContextProvider({ children }) {
   }, []);
     
   const value = {
-    apiData
+    apiData,
+    setApiData
   };
 
 

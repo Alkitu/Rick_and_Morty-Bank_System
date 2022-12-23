@@ -62,9 +62,9 @@ export function Register() {
           />
         </div>
 
-        <button className="bg-black hover:bg-rick&morty-outer-space-crayola  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        <Link to="/register" className="bg-black hover:bg-rick&morty-outer-space-crayola  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
           Register
-        </button>
+        </Link>
       </form>
       <p className="my-4 text-sm flex justify-between px-3">
         Already have an Account?
