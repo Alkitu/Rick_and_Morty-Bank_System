@@ -10,6 +10,7 @@ function SubMenu({
   itemVariants,
   className
 }) {
+
   const categoryListAnimation = {
     whileTap: { scale: 0.95 },
     initial: { opacity: 0, y: 20, },
@@ -52,8 +53,8 @@ function SubMenu({
         key={"General Menu"}
         animate={isOpen ? "open" : "closed"}
         whileTap={{ scale: 0.97 }}
-        whileHover={{ color: "#193840" }}
-        className="text-center   font-bold  flex-row w-full  content-center "
+        whileHover={{ color: 'black', }}
+        className="text-center text-rick&morty-outer-space-crayola  font-bold  flex-row w-full  content-center "
       >
         {name_en}
 
@@ -65,7 +66,12 @@ function SubMenu({
               {...categoryListAnimation}
               className={"font-normal text-neutral-600 mt-5 flex-row w-full content-center justify-center"}
               >
-              <p className="text-center">{category.name_en}</p>
+              <motion.p 
+                whileHover={{ color: 'black'}}
+                transition={{duration: 1}}
+                className="text-center">
+                {category.name_en}
+                </motion.p>
               </motion.li>
             ))}
         </AnimatePresence>

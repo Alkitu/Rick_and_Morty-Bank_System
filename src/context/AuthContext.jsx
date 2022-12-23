@@ -1,3 +1,4 @@
+'use client'
 import { createContext, useContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
@@ -21,6 +22,7 @@ export const useAuth = () => {
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [apiData, setApiData] = useState(0)
 
   const signup = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -45,8 +47,10 @@ export function AuthProvider({ children }) {
       setUser(currentUser);
       setLoading(false);
     });
+
     return () => unsubuscribe();
   }, []);
+
 
   return (
     <authContext.Provider
@@ -58,6 +62,7 @@ export function AuthProvider({ children }) {
         loading,
         loginWithGoogle,
         resetPassword,
+        apiData
       }}
     >
       {children}

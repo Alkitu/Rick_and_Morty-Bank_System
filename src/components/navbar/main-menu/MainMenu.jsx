@@ -1,16 +1,17 @@
-import { React, useState } from "react";
-import { motion } from "framer-motion";
-import SubMenu from "../sub-menu/SubMenu.jsx";
-import winesData from "../../../data/menu.services.json";
-import generalData from "../../../data/menu.account.json";
+import { React, useState } from 'react';
+import { motion } from 'framer-motion';
+import SubMenu from '../sub-menu/SubMenu.jsx';
+import subData from '../../../data/menu.services.json';
+import generalData from '../../../data/menu.account.json';
+import UpdateButton from '../../ui/buttons/UpdateApiButton.jsx';
 
 
 function MainMenu () {
   const [isOpen, setIsOpen] = useState(true);
   const [isOpenWines, setIsOpenWines] = useState(false);
   const [isOpenGeneral, setIsOpenGeneral] = useState(false);
-  const [winesCategories, setWinesCategories] = useState(winesData);
-  const [generalCategories, setgeneralCategories] = useState(generalData);
+  const [subCategories, setSubCategories] = useState(subData);
+  const [generalCategories, setGeneralCategories] = useState(generalData);
 
 
   const itemVariants = {
@@ -19,7 +20,7 @@ function MainMenu () {
       y: 0,
       transition: {
         duration: 2,
-        type: "spring",
+        type: 'spring',
         stiffness: 300,
         damping: 24,
         staggerChildren: 0.07,
@@ -41,8 +42,7 @@ function MainMenu () {
     <>
       <motion.ul
         variants={itemVariants}
-        className="flex-row group-first:border-b-2 content-center justify-center top-[100px] right-0 p-7 fixed w-80 "
-        whileHover={{ fontWeight: "bolder", color: "black" }}
+        className='flex-row group-first:border-b-2 content-center justify-center top-[100px] right-0 p-7 fixed w-80 '
       >
 
         <SubMenu
@@ -50,7 +50,7 @@ function MainMenu () {
           isOpen={isOpen}
           subIsOpen={isOpenGeneral}
           setIsOpenList={setIsOpenGeneral}
-          name_en={"Account"}
+          name_en={'Account'}
           categories={generalCategories}
         />
 
@@ -59,11 +59,20 @@ function MainMenu () {
           isOpen={isOpen}
           subIsOpen={isOpenWines}
           setIsOpenList={setIsOpenWines}
-          name_en={"Services"}
-          categories={winesCategories}
-          className="mt-5"
+          name_en={'Services'}
+          categories={subCategories}
+          className='mt-5 '
         />
 
+
+        <div className="flex flex-col mt-7 p-0 text-center">
+
+          <UpdateButton
+            itemVariants={itemVariants}           
+            name_en='Update Api'
+            className='bg-black hover:bg-rick&morty-outer-space-crayola rounded py-2 px-4 text-rick&morty-june-bud  self-center  '
+          />
+        </div>
       </motion.ul>
     </>
   );

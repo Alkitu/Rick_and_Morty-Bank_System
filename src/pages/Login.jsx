@@ -1,10 +1,7 @@
 'use client'
-import { async } from "@firebase/util";
-import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { getUsers } from "../services/firestore";
 import { Alert } from "./Alert";
 
 export function Login() {
@@ -15,14 +12,6 @@ export function Login() {
   const { login, loginWithGoogle, resetPassword } = useAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
-
-// useEffect(async () => {
-//   try {
-//     const querySnapshot = await getDocs(collection(db, 'users'))
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }, [])
 
 
   const handleSubmit = async (e) => {
@@ -59,35 +48,6 @@ export function Login() {
     }
   };
 
-//this is the function that brings all the data from the api
-
-  const testingFunction = async () => {
-    const aver = getUsers()
-  
-    var returnArray = [];
-
-    function getDataFromAPI(count){
-      return axios.get(`https://rickandmortyapi.com/api/character?page=${count}`).then(function(response){
-        returnArray = returnArray.concat(response.data.results);
-        return getDataFromAPI(count +1);
-      }
-      ).catch(function() {
-        return returnArray;
-      }
-    )}
-
-    await getDataFromAPI(1)
-
-    console.log(returnArray)
-  };
-
-
-  // const [usuario, setUsuario] = useState(null);
-
-  // const handleClick = async () => {
-  //   const usuario = await getUsers();
-  //   setUsuario(usuario);
-  // };
 
 
   return (
@@ -159,15 +119,6 @@ export function Login() {
           Register
         </Link>
       </p>
-        <button className="bg-white text-black" onClick={testingFunction}>
-          Luis 
-        </button>
-            {/* <div>
-          <button className="bg-white text-black" onClick={handleClick}>Obtener usuarios</button>
-          {usuario && usuario.map(user => (
-            <div key={user.id} className='text-white'>{user.name}</div>
-          ))}
-        </div> */}
 
     </div>
   );
