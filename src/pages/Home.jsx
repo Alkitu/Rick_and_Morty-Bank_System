@@ -1,10 +1,26 @@
+import { useEffect, useState } from "react";
 import SimpleList from "../components/ui/list/SimpleList";
 import { useAuth } from "../context/AuthContext";
+import { getUsers } from "../services/firestore";
 
 export function Home() {
   const { user } = useAuth();
+  const [userData, setUserData] = useState('')
 
-  console.log(user);
+  useEffect(() => {
+    async function fetchData() {
+      const user = await getUsers()
+      console.log(user)
+
+      setUserData(user)
+
+    }
+    fetchData();
+  
+
+  }, [])
+
+
 
   return (
     <>

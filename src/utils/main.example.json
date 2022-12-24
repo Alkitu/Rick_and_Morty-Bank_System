@@ -1,0 +1,127 @@
+{
+  "id": "123456789",
+  "name": "Luis Eduardo Urdaneta Martucci",
+  "gender": "male",
+  "species": "Human",
+  "status": "Alive",
+  "image": "https://alkitu.com/wp-content/uploads/2020/11/Luis-Urdaneta-Foto-Perfil-Cuadrada-150x150.jpeg",
+  "accounts": [
+    {
+      "id": "12345678",
+      "name": "Account 1",
+      "amount": 50,
+      "movements": [
+          {
+            "id": "123456781",
+            "from": "123456789",
+            "to": "87654321",
+            "amount": 50,
+            "status": "Completed",
+            "type": "deposits"
+          },
+          {
+            "id": "123456782",
+            "from": "123456789",
+            "to": "87654321",
+            "amount": 50,
+            "status": "Completed",
+            "type": "withdrawals"
+          }
+        ]
+    },
+    {
+      "id": "22345678",
+      "name": "Account 2",
+      "amount": 50,
+      "movements": {
+        "deposits": [],
+        "withdrawals": []
+      }
+    }
+  ],
+  "loans": [
+    {
+      "id": "32345678",
+      "name": "House",
+      "image": "https://alkitu.com/wp-content/uploads/2020/11/Luis-Urdaneta-Foto-Perfil-Cuadrada-150x150.jpeg",
+      "fees": [
+        {
+          "id": "3232321",
+          "amount": 60,
+          "currentAmount": 60,
+          "payments": [
+            {
+              "id": "123456781",
+              "from": "123456789",
+              "to": "87654321",
+              "amount": 50,
+              "status": "Completed",
+              "type": "deposits"
+            },
+            {
+              "id": "123456782",
+              "from": "123456789",
+              "to": "87654321",
+              "amount": 50,
+              "status": "Completed",
+              "type": "withdrawals"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "52345678",
+      "name": "Car",
+      "image": "https://alkitu.com/wp-content/uploads/2020/11/Luis-Urdaneta-Foto-Perfil-Cuadrada-150x150.jpeg",
+      "fees": [
+        {
+          "id": "5232321",
+          "amount": 60,
+          "currentAmount": 0,
+          "payments": [
+            {
+              "id": "123456781",
+              "from": "123456789",
+              "to": "87654321",
+              "amount": 50,
+              "status": "Completed",
+              "type": "deposits"
+            },
+            {
+              "id": "123456782",
+              "from": "123456789",
+              "to": "87654321",
+              "amount": 50,
+              "status": "Completed",
+              "type": "withdrawals"
+            }
+          ]
+        },
+        {
+          "id": "5232321",
+          "amount": 60,
+          "currentAmount": 30,
+          "payments": [
+            {
+              "id": "123456781",
+              "from": "123456789",
+              "to": "87654321",
+              "amount": 50,
+              "status": "Completed",
+              "type": "deposits"
+            },
+            {
+              "id": "123456782",
+              "from": "123456789",
+              "to": "87654321",
+              "amount": 50,
+              "status": "Completed",
+              "type": "withdrawals"
+            }
+          ]
+        }
+      ]    
+    }
+  ]
+}

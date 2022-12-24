@@ -7,7 +7,6 @@ export function ProtectedRoute({ children }) {
   if (loading) {
     return (
       <>
-
       </>
     )
   }
