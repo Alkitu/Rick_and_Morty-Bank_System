@@ -151,14 +151,14 @@ export function Login() {
 
       </div>
       <div className="pb-20">
-      <div className="max-w-2xl  m-auto">
-        <h3 className="text-2xl text-justify">"Meet some other dumbs that use this fraud...  <br/>I mean bank. <br/> <br/>Every time that you came back I will introduce you to others, but don't come back"
+      <div className="max-w-2xl  m-auto px-10">
+        <h3 className="text-2xl text-justify ">"Meet some other dumbs that use this fraud...  <br/>I mean bank. <br/> <br/>Every time that you came back I will introduce you to others, but don't come back"
           <p className="text-lg  text-end">- Rick Sanchez</p>     
         </h3>          
       </div>
 
 
-        <div className=" max-w-3xl gap-3 grid grid-cols-3 my-5 m-auto">
+        <div className="px-5 max-w-3xl gap-3 grid grid-cols-3 my-5 m-auto">
               {apiData.slice(randomNumber, endNumber).map((character) => {
                   return <CharactersItems {...character} onlyPictures={false} />;
                 })
