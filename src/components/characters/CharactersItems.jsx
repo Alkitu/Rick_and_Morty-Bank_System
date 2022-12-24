@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types';
 
 export default function CharactersItems({id, name, status, species, onlyPictures}) {
-  const [statusColor, setStatusColor] = useState("white")
+  const [statusColor, setStatusColor] = useState("")
                   
   useEffect(() => {
     if(status === "Alive"){
-      setStatusColor("green-500")
+      setStatusColor("text-green-500")
     } else if (status ===  "Dead"){
-      setStatusColor("red-500")
+      setStatusColor("text-red-500")
     } else if (status ===  "unknown"){
-      setStatusColor("slate-500")
+      setStatusColor("text-slate-500")
     }
     
   }, [statusColor])
@@ -32,7 +32,7 @@ if (onlyPictures){
         <h4 className='border-b-2 px-3 pb-2 mx-5 text-lg font-bold text-center'>{name}</h4>
         <div className='px-3 pb-2 mx-5 flex ontent-center justify-center'>
           <div className="flex content-center justify-center my-1 text-center items-baseline ">
-            <i className={`fa fa-circle fa-fw fs-8 text-${statusColor}`} aria-hidden="true"></i>
+            {statusColor && <i className={`fa fa-circle fa-fw fs-8 ${statusColor}`} aria-hidden="true"></i>}
             <h4 className="flex m-0 "> &nbsp; {status} - {species}</h4>
           </div>
         </div>
