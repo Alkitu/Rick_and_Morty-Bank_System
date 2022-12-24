@@ -8,13 +8,15 @@ import { AuthProvider } from "./context/AuthContext";
 import {ApiContext} from "./context/ApiContext";
 import './App.css'
 import { useContext } from "react";
+import { Info } from "./pages/Info";
+import ParticlesBackground from "./components/particles/particlesBackground";
 
 function AuthGuard({ children }) {
   const  {apiData}  = useContext(ApiContext);
 
   if (!apiData) {
     console.log('muere en la condicion')
-    return <p> loading Luis</p>;
+    return <p> loading...</p>;
   }
 
   console.log('no muere en la condicion')
@@ -25,9 +27,13 @@ function AuthGuard({ children }) {
 function App() {
 
   return (
+    
     <AuthGuard>
+      <div className="h-screen  fixed -z-50">
+        <ParticlesBackground/>
+      </div>
       <NavBar/>
-      <div className="bg-slate-black h-screen pt-20 flex text-white">
+      <div className="bg-slate-black h-screen pt-20 flex text-white z-50">
         <AuthProvider>
           <Routes>
             <Route path="/login" element={<Login />} />
@@ -39,11 +45,20 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route
+              path="/account/info"
+              element={
+                <ProtectedRoute>
+                  <Info />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/register" element={<Register />} />
+            
           </Routes>
         </AuthProvider>
       </div>
-    </AuthGuard>
+    </AuthGuard> 
   )
 }
 

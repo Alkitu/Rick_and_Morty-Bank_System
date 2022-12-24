@@ -1,10 +1,13 @@
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, setDoc, doc, collection, onSnapshot, getDocs, deleteDoc } from 'firebase/firestore'
 
 const db = getFirestore();
 const userRef = collection(db, "users");
-const charactersRef = collection(db, 'characters');
+// const charactersRef = collection(db, 'characters');
 
+
+// Detail of user account
 export async function getUsers() {
+const userRef = collection(db, "users");
   return await getDocs(userRef).then((snap) => {
     snap.forEach((doc) => {
       console.log(doc.id);
@@ -13,20 +16,17 @@ export async function getUsers() {
 });
 }
 
-// Create user
-export async function createUser(user) {
-  const docRef = await userRef.add(user);
-  return docRef.id;
-}
-
-// Update user
+// Update user .... We have to pass the userId and the updates like a json 
 export async function updateUser(userId, updates) {
-  await userRef.doc(userId).update(updates);
+  const userRef = doc(db, "users", userId);
+  setDoc(userRef,  updates, { merge: true });
 }
 
 // Delete User
 export async function deleteUser(userId) {
-  await userRef.doc(userId).delete();
+    deleteDoc(doc(db, "users", userId)).then(() => {
+      console.log("deleted");
+  });
 }
 
 
@@ -35,3 +35,13 @@ export async function uploadDataToFirebase(data) {
     await charactersRef.add(character);
   });
 }
+
+
+
+
+
+// // Create user
+// export async function createUser(user) {
+//   const docRef = await userRef.add(user);
+//   return docRef.id;
+// }

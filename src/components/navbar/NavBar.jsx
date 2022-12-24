@@ -3,6 +3,7 @@ import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./hook/use-dimensions.jsx";
 import { ToggleMenu } from "./toggle-menu/ToggleMenu";
 import MainMenu from "./main-menu/MainMenu";
+import { Link } from "react-router-dom";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -31,10 +32,13 @@ function NavBar() {
 
   return (
   <div className="top-0 z-50 w-screen ">
-    <div className="fixed top-0 w-screen bg-black">
+    <div className="fixed top-0 w-screen bg-black bg-opacity-50">
+    <Link to={"/"}>
       <div className="w-40 ml-8 mt-4 mb-4">
-        <img src="/assets/images/Rick_and_Morty_Logo.svg" alt="" className="w-full"/>
-      </div>
+          <img src="/assets/images/Rick_and_Morty_Logo.svg" alt="" className="w-full"/>
+        </div>
+    </Link>
+
       <motion.nav
       initial={false}
       animate={isOpen ? "open" : "closed"}
@@ -48,8 +52,6 @@ function NavBar() {
         <ToggleMenu  toggle={() => toggleOpen()} />
     </motion.nav>
     </div>
-    
-
   </div>
   );
 }

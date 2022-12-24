@@ -1,7 +1,7 @@
 'use client'
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import CharactersItems from "../components/navbar/characters/CharactersItems";
+import CharactersItems from "../components/characters/CharactersItems";
 import { ApiContext } from "../context/ApiContext";
 import { useAuth } from "../context/AuthContext";
 import { Alert } from "./Alert";
@@ -25,8 +25,8 @@ export function Login() {
     setRandomNumber(number1)
     setEndNumber(number1 + 12)
 
- }, [])
- 
+}, [])
+
 
 
 //  console.log(number1)
@@ -151,15 +151,15 @@ export function Login() {
 
       </div>
       <div className="pb-20">
-      <div className="max-w-xl  m-auto">
-        <h3 className="text-2xl  text-center">"Meet some other dumbs that use this fraud...  <br/>I mean bank. <br/> Reload the page and I will introduce you to others"
+      <div className="max-w-2xl  m-auto">
+        <h3 className="text-2xl text-justify">"Meet some other dumbs that use this fraud...  <br/>I mean bank. <br/> <br/>Every time that you came back I will introduce you to others, but don't come back"
           <p className="text-lg  text-end">- Rick Sanchez</p>     
         </h3>          
       </div>
 
 
         <div className=" max-w-3xl gap-3 grid grid-cols-3 my-5 m-auto">
-              {randomNumber && endNumber &&  apiData.slice(randomNumber, endNumber).map((character) => {
+              {apiData.slice(randomNumber, endNumber).map((character) => {
                   return <CharactersItems {...character} onlyPictures={false} />;
                 })
               }

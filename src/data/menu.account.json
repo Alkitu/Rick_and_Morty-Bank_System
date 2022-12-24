@@ -1,10 +1,12 @@
 [
   {
     "id": "info",
-    "name_en": "Info"
+    "name_en": "Info",
+    "url": "/account/info"
   },
   {
     "id": "notifications",
-    "name_en": "Notifications"
+    "name_en": "Notifications",
+    "url": "/account/notifications"
   }
 ]

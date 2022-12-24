@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function SubMenu({
   isOpen,
@@ -62,17 +63,19 @@ function SubMenu({
           {isOpen &&
             subIsOpen &&
             categories.map((category) => (
-              <motion.li 
-              {...categoryListAnimation}
-              className={"font-normal text-neutral-600 mt-5 flex-row w-full content-center justify-center"}
-              >
-              <motion.p 
-                whileHover={{ color: 'black'}}
-                transition={{duration: 1}}
-                className="text-center">
-                {category.name_en}
-                </motion.p>
-              </motion.li>
+              <Link to={`${category.url}`}>
+                <motion.li 
+                {...categoryListAnimation}
+                className={"font-normal text-neutral-600 mt-5 flex-row w-full content-center justify-center"}
+                >
+                <motion.p 
+                  whileHover={{ color: 'black'}}
+                  transition={{duration: 1}}
+                  className="text-center">
+                  {category.name_en}
+                  </motion.p>
+                </motion.li>
+              </Link>
             ))}
         </AnimatePresence>
       </motion.ul>

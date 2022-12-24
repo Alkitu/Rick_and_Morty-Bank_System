@@ -1,22 +1,28 @@
 [
   {
     "id": "bankAccounts",
-    "name_en": "Account Status"
+    "name_en": "Account Status",
+    "url": "/services/bankAccounts"
+
   },
   {
     "id": "deposit",
-    "name_en": "Deposit"
+    "name_en": "Deposit",
+    "url": "/services/deposits"
   },
   {
     "id": "withdrawal",
-    "name_en": "Withdrawal"
+    "name_en": "Withdrawal",
+    "url": "/services/withdrawals"
   },
   {
     "id": "transfer",
-    "name_en": "Transfer"
+    "name_en": "Transfer",
+    "url": "/services/transfers"
   },
   {
     "id": "loans",
-    "name_en": "Loans"
+    "name_en": "Loans",
+    "url": "/services/loans"
   }
 ]
